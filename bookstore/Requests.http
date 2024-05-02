@@ -1,0 +1,44 @@
+@url = http://localhost:5251
+
+GET {{url}}/books
+
+###
+
+GET {{url}}/book/6
+
+###
+
+GET {{url}}/searchBook/Mbaron me ne
+
+###
+
+# GET {{url}}/searchAuthor/Book Author - 2
+
+###
+
+POST {{url}}/book
+Content-Type: application/json
+
+{
+    "name": "Liber POST",
+    "author": "Autori POST",
+    "pages": 23,
+    "price": 2
+}
+
+###
+
+PUT {{url}}/book/13
+Content-Type: application/json
+
+{
+    "id": 13,
+    "name": "Updated Liber",
+    "author": "Updated Autor",
+    "pages": 50,
+    "price": 5
+}
+
+###
+
+DELETE {{url}}/book/13
