@@ -12,7 +12,15 @@ GET {{url}}/searchBook/Mbaron me ne
 
 ###
 
-# GET {{url}}/searchAuthor/Book Author - 2
+GET {{url}}/searchAuthor/Paolo Coelho
+
+###
+
+GET {{url}}/searchPages/99
+
+###
+
+GET {{url}}/searchPrice/10 
 
 ###
 
