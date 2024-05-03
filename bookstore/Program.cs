@@ -1,11 +1,81 @@
 using bookstore.DatabaseContext;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<BooksContext>();
-var app = builder.Build();
 
+builder.Services.AddSingleton<TokenService>();
+var secretKey = Settings.GenereateSecretByte();
+
+builder.Services.AddAuthentication(config =>
+{
+    config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(config =>
+{
+    config.RequireHttpsMetadata = false;
+    config.SaveToken = true;
+    config.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(secretKey),
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateLifetime = true
+    };
+});
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("admin", policy => policy.RequireRole("admin"));
+    options.AddPolicy("client", policy => policy.RequireRole("client"));
+});
+
+
+builder.Services.AddDbContext<BooksContext>();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder => 
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader());
+});
+
+var app = builder.Build();
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.UseCors("AllowAll");
 
 app.MapGet("/", () => "Hello World!");
+
+
+app.MapPost("/login", (User userModel, TokenService service) => {
+    var user = UserRepository.Find(userModel.Username, userModel.Password);
+
+    if (user is null)
+    {
+        return Results.NotFound(new {message = "Invalid username or passsword"});
+    }
+
+    var token = service.GenerateToken(user);
+
+    user.Password = string.Empty;
+
+    return Results.Ok(new {user = user, token = token});
+});
+
+
+app.MapGet("/admin", (ClaimsPrincipal user) => {
+    return Results.Ok(new {message = $"Authenticated as { user?.Identity?.Name }" });
+}).RequireAuthorization("Admin");
+
+
+app.MapGet("/client", (ClaimsPrincipal user) => {
+    return Results.Ok(new { message = $"Authenticated as { user?.Identity?.Name }" });
+}).RequireAuthorization("Client");
 
 
 app.MapGet("/books", async (BooksContext context) => { 
@@ -50,7 +120,7 @@ app.MapPost("/book", async (BooksContext context, Book book) => {
 });
 
 
-app.MapPut("book/{id}", async (BooksContext context, Book updatedBook, int id) => {
+app.MapPut("/book/{id}", async (BooksContext context, Book updatedBook, int id) => {
     var book = await context.Books.FindAsync(id);
     if (book is null)
     {

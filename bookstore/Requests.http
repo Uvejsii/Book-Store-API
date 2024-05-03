@@ -1,5 +1,35 @@
 @url = http://localhost:5251
 
+POST {{url}}/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "Username": "admin",
+    "Password": "admin0439"
+}
+
+###
+
+GET {{url}}/admin
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwibmJmIjoxNzE0NzYwODE1LCJleHAiOjE3MTQ3NjM1MTUsImlhdCI6MTcxNDc2MDgxNX0.bBuT7rhoGiHJWiAfZJ4Wrj5KSJ-xYr8ZF3EoyYQ44JU
+
+###
+
+POST {{url}}/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "Username": "client",
+    "Password": "client1387"
+}
+
+###
+
+GET {{url}}/client
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImNsaWVudCIsInJvbGUiOiJjbGllbnQiLCJuYmYiOjE3MTQ3NjA5NzQsImV4cCI6MTcxNDc2MzY3NCwiaWF0IjoxNzE0NzYwOTc0fQ.TL8TeOjSyGLAy1m8J8CaeAY46zY7ZI7iJI19ALdpp5I
+
+###
+
 GET {{url}}/books
 
 ###

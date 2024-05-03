@@ -130,3 +130,4 @@ C:\Users\Admin\Desktop\Bookstore - Project\bookstore\bin\Debug\net8.0\runtimes\w
 C:\Users\Admin\Desktop\Bookstore - Project\bookstore\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Admin\Desktop\Bookstore - Project\bookstore\obj\Debug\net8.0\bookstore.csproj.CopyComplete
 C:\Users\Admin\Desktop\Bookstore - Project\bookstore\obj\Debug\net8.0\bookstore.sourcelink.json
+C:\Users\Admin\Desktop\Bookstore - Project\bookstore\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
