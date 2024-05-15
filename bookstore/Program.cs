@@ -89,6 +89,7 @@ app.MapGet("/book/{id}", async (BooksContext context, int id) => {
             Results.NotFound("Sorry, book not found.");
 });
 
+
 app.MapGet("/searchBook/{bookName}", async (BooksContext context, string bookName) => {
     var books = await context.Books.Where(book => book.Name == bookName).ToListAsync();
     return books.Any() ? Results.Ok(books) : Results.NotFound("Sorry, book not found.");

@@ -1,6 +1,6 @@
 # Bookstore API
 
-This is a simple RESTful API for managing books in a bookstore. It allows you to perform CRUD (Create, Read, Update, Delete) operations on books.
+This is a simple RESTful API for managing books in a bookstore. It allows you to perform CRUD (Create, Read, Update, Delete) operations on books. It also has JSON Web Token (JWT) for secure authorization.
 
 ## Table of Contents
 
