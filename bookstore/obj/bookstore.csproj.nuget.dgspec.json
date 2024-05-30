@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\Bookstore - Project\\bookstore\\bookstore.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\Projekte&Detyra-Fk\\WebSherbime\\Bookstore - Project\\bookstore\\bookstore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\Bookstore - Project\\bookstore\\bookstore.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Projekte&Detyra-Fk\\WebSherbime\\Bookstore - Project\\bookstore\\bookstore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Bookstore - Project\\bookstore\\bookstore.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Projekte&Detyra-Fk\\WebSherbime\\Bookstore - Project\\bookstore\\bookstore.csproj",
         "projectName": "bookstore",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\Bookstore - Project\\bookstore\\bookstore.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Projekte&Detyra-Fk\\WebSherbime\\Bookstore - Project\\bookstore\\bookstore.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\Bookstore - Project\\bookstore\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Projekte&Detyra-Fk\\WebSherbime\\Bookstore - Project\\bookstore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

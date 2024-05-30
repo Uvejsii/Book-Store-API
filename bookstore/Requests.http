@@ -11,7 +11,7 @@ Content-Type: application/json
 ###
 
 GET {{url}}/admin
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwibmJmIjoxNzE0NzYwODE1LCJleHAiOjE3MTQ3NjM1MTUsImlhdCI6MTcxNDc2MDgxNX0.bBuT7rhoGiHJWiAfZJ4Wrj5KSJ-xYr8ZF3EoyYQ44JU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwibmJmIjoxNzE1ODk5MjkwLCJleHAiOjE3MTU5MDE5OTAsImlhdCI6MTcxNTg5OTI5MH0.IXlErw0YvgUW8bN3myj4fIGciMc3MkIDGcpRQCdRkkU
 
 ###
 
@@ -26,7 +26,7 @@ Content-Type: application/json
 ###
 
 GET {{url}}/client
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImNsaWVudCIsInJvbGUiOiJjbGllbnQiLCJuYmYiOjE3MTQ3NjA5NzQsImV4cCI6MTcxNDc2MzY3NCwiaWF0IjoxNzE0NzYwOTc0fQ.TL8TeOjSyGLAy1m8J8CaeAY46zY7ZI7iJI19ALdpp5I
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImNsaWVudCIsInJvbGUiOiJjbGllbnQiLCJuYmYiOjE3MTU4OTkzNzQsImV4cCI6MTcxNTkwMjA3NCwiaWF0IjoxNzE1ODk5Mzc0fQ.HJ6oYRn6R7IU2pVQW_CukTT-gG8CGzV5TvzwuiMByug
 
 ###
 
@@ -60,23 +60,22 @@ Content-Type: application/json
 {
     "name": "Liber POST",
     "author": "Autori POST",
-    "pages": 23,
-    "price": 2
+    "pages": 73,
+    "price": 15
 }
 
 ###
 
-PUT {{url}}/book/13
+PUT {{url}}/book/24
 Content-Type: application/json
 
 {
-    "id": 13,
-    "name": "Updated Liber",
-    "author": "Updated Autor",
-    "pages": 50,
-    "price": 5
+    "name": "Updated Liber 2",
+    "author": "Updated Autor 2",
+    "pages": 60,
+    "price": 10
 }
 
 ###
 
-DELETE {{url}}/book/13
+DELETE {{url}}/book/24
